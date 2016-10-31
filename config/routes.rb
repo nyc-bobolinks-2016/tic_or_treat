@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   resources :users
 
   get '/sessions/new', to: 'sessions#new'
-  post '/sessions/create', to: 'sessions#create'
+  post '/sessions', to: 'sessions#create'
   get '/sessions/delete', to: 'sessions#delete'
 end
