@@ -13,6 +13,7 @@
       <div class="nav-wrapper">
         <a href="#" class="brand-logo">home</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <!-- Replace sessions with current_user helper method -->
           <% if session[:user_id] %>
             <li><a href="/sessions/new">sign in</a></li>
             <li><a href="/users/new">sign up</a></li>
