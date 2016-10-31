@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  protect_from_forgery
   def index
   end
 
@@ -11,7 +12,7 @@ class UsersController < ApplicationController
 
   def create
     User.create(user_params)
-    redirect_to game_index_path
+    redirect_to root_path
   end
 
   private

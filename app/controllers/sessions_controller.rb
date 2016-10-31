@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
-  skip_before_filter :verify_authenticity_token
-
+  protect_from_forgery
+  # skip_before_filter :verify_authenticity_token
   def new
   end
 
@@ -8,10 +8,10 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:user][:username])
     if @user && @user.authenticate(params[:user][:password])
       session[:id] = @user.id
-      redirect
+      redirect_to root_path
     else
       @errors = ['incorrect username or email']
-      render
+      redirect_to root_path
     end
   end
 
