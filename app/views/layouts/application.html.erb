@@ -9,6 +9,20 @@
   </head>
 
   <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">home</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <% if session[:user_id] %>
+            <li><a href="/sessions/new">sign in</a></li>
+            <li><a href="/users/new">sign up</a></li>
+          <% else %>
+              <li><a href="/sessions/new">sign in</a></li>
+              <li><a href="/users/new">sign up</a></li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
