@@ -2,4 +2,8 @@
 @hash}
 I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"Jprocessors:type=application/font-woff&file_type=application/font-woff;TTI"file-digest:///Users/apprentice/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/materialize-sass-0.97.7/app/assets/fonts/roboto/Roboto-Bold.woff;TTF:dependencies_digest"%6Ğ"è­‹¬GE“Å$cm>@CË}
 •„¦ùƒœ;dmj:idI"E229191dc0876260a4b32fa4820f2e2b1bf6106979a2bedf3a37e5eb85f2cd878;F:
+<<<<<<< HEAD
 mtimel+€X
+=======
+mtimel+xµX
+>>>>>>> add login and logout routes and html
