@@ -1,5 +1,6 @@
 <form class="col s8 offset-s2" action="/users" method="post">
   <div class="row-center">
+    <%= render "/errors" %>
     <div class="input-field col s12">
       <i class="material-icons prefix"></i>
       <input id="icon_username" type="text" class="validate" name="user[username]">
@@ -14,6 +15,6 @@
     </div>
   </div>
   <div class="row center">
-    <input id="download-button" class="btn-large waves-effect waves-light indigo darken-4" type="submit" value="Register">
+    <input id="download-button" class="btn-large waves-effect waves-light purpleButton" type="submit" value="Register">
   </div>
 </form>
