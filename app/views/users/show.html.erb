@@ -1,0 +1,50 @@
+
+<div style="position: fixed; width: 30%; left: 200px;">
+  <h3>Your Stats</h2>
+  <div style="up: 200px;">
+    <h5>games played: <%=@user.games.count %></h5>
+    <h5>games won: <%=@user.games_won.count %></h5>
+    <h5>games lost: <%=@user.games_lost.count %></h5>
+    <h5>games lost: <%=@user.games_tied.count %></h5>
+  </div>
+
+</div>
+
+<div class="row" style="width: 40%; margin-right: 0;">
+  <h5>completed</h5>
+  <table class="highlight">
+    <tr>
+      <th>game</th>
+      <th>date</th>
+      <th>status</th>
+    </tr>
+    <% @user.games.each do |game| %>
+    <tr>
+      <td><%= game.id %></td>
+      <td><%= game.created_at %></td>
+      <td><%= game.outcome %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="row" style="width: 40%; margin-right: 0;">
+  <h5>in progress</h5>
+  <table class="highlight">
+    <tr>
+      <th>stuff</th>
+      <th>stuff2</th>
+      <th>stuff3</th>
+    </tr>
+    <tr>
+      <td>stuff</td>
+      <td>stuff</td>
+      <td>stuff</td>
+    </tr>
+    <tr>
+      <td>stuff</td>
+      <td>stuff</td>
+      <td>stuff</td>
+    </tr>
+  </table>
+</div>
