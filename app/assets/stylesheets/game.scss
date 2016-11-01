@@ -2,11 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .img-user {
-  background-color: red;
+  background-image: url("http://www.drodd.com/images15/red-x22.png");
+  background-size: contain;
 }
 
 .img-comp {
-  background-color: blue;
+  background-image: url("https://openclipart.org/image/2400px/svg_to_png/50113/clipart-0109.png");
+  background-size: contain;
 }
 
 .container {

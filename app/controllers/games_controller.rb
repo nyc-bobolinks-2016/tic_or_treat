@@ -17,13 +17,13 @@ class GamesController < ApplicationController
       new_board = game.update_board(idx)
       game.update(board: new_board)
       if game.win?('X')
-        render json: "user"
+        render json: {winner: "user"}
       else
         if game.board.chars.select {|space| space == "-"}.count > 1
           newer_board = game.computer_guess
           game.update(board: newer_board.last)
           if game.win?('O')
-            render json: "comp"
+            render json: {loser: "comp"}
           else
             render json: newer_board.first.to_s
           end
@@ -32,12 +32,4 @@ class GamesController < ApplicationController
         end
       end
   end
-
-
-
-
-
-
-
-
 end
