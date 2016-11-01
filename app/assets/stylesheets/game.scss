@@ -1,6 +1,14 @@
 // Place all the styles related to the Game controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.img-user {
+  background-color: red;
+}
+
+.img-comp {
+  background-color: blue;
+}
+
 .container {
   max-width: 960px;
   min-width: 450px;
