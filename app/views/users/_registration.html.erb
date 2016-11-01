@@ -1,4 +1,4 @@
-<form class="col s8 offset-s2" action="/users" method="post">
+<%= form_tag "/users", method: "post", html: {class: "col s8 offset-s2"} do %>
   <div class="row-center">
     <%= render "/errors" %>
     <div class="input-field col s12">
@@ -17,4 +17,4 @@
   <div class="row center">
     <input id="download-button" class="btn-large waves-effect waves-light purpleButton" type="submit" value="Register">
   </div>
-</form>
+<% end %>
