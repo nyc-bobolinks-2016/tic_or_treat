@@ -15,4 +15,12 @@ class User < ApplicationRecord
   def games_lost
     self.games.select {|game| game.outcome == -1 }
   end
+
+  def games_pending
+    self.games.select {|game| game.outcome == 2}
+  end
+
+  def games_completed
+    self.games_won + self.games_tied + self.games_lost
+  end
 end
