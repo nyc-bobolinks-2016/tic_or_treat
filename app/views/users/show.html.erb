@@ -1,50 +1,59 @@
-
-<div style="position: fixed; width: 30%; left: 200px;">
-  <h3>Your Stats</h2>
-  <div style="up: 200px;">
-    <h5>games played: <%=@user.games.count %></h5>
-    <h5>games won: <%=@user.games_won.count %></h5>
-    <h5>games lost: <%=@user.games_lost.count %></h5>
-    <h5>games lost: <%=@user.games_tied.count %></h5>
+<div>
+  <h3>your stats</h3>
+  <div>
+    <br><br>
+    <h5>summary</h5>
+      <table class="bordered striped centered">
+          <tr>
+            <th>games played</th>
+            <th>games won</th>
+            <th>games lost</th>
+          </tr>
+          <tr>
+            <td><%=@user.games.count %></td>
+            <td><%=@user.games_won.count %></td>
+            <td><%=@user.games_lost.count %></td>
+          </tr>
+      </table>
   </div>
-
-</div>
-
-<div class="row" style="width: 40%; margin-right: 0;">
-  <h5>completed</h5>
-  <table class="highlight">
-    <tr>
-      <th>game</th>
-      <th>date</th>
-      <th>status</th>
-    </tr>
-    <% @user.games.each do |game| %>
-    <tr>
-      <td><%= game.id %></td>
-      <td><%= game.created_at %></td>
-      <td><%= game.outcome %></td>
-    </tr>
-    <% end %>
-  </table>
-</div>
-
-<div class="row" style="width: 40%; margin-right: 0;">
-  <h5>in progress</h5>
-  <table class="highlight">
-    <tr>
-      <th>stuff</th>
-      <th>stuff2</th>
-      <th>stuff3</th>
-    </tr>
-    <tr>
-      <td>stuff</td>
-      <td>stuff</td>
-      <td>stuff</td>
-    </tr>
-    <tr>
-      <td>stuff</td>
-      <td>stuff</td>
-      <td>stuff</td>
-    </tr>
-  </table>
+  <br><br>
+  <div>
+    <h5>completed</h5>
+    <table class="bordered striped centered">
+      <tr>
+        <th>game</th>
+        <th>date</th>
+        <th>time</th>
+        <th>status</th>
+      </tr>
+      <% @user.games.each do |game| %>
+      <tr>
+        <td><%= game.id %></td>
+        <td><%= game.created_at.strftime('%D') %></td>
+        <td><%= game.game_time %></td>
+        <td><%= game.game_status %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+  <br><br>
+  <div>
+    <h5>in progress</h5>
+    <table class="bordered striped centered">
+      <tr>
+        <th>game</th>
+        <th>date</th>
+        <th>time</th>
+        <th>status</th>
+      </tr>
+      <% @user.games.each do |game| %>
+      <tr>
+        <td><%= game.id %></td>
+        <td><%= game.created_at.strftime('%D') %></td>
+        <td><%= game.game_time %></td>
+        <td><%= game.game_status %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
 </div>
