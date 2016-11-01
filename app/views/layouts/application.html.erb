@@ -16,6 +16,8 @@
           <!-- Replace sessions with current_user helper method -->
           <% if p current_user %>
             <li><a href="/sessions/delete">logout</a></li>
+            <li><a href="/users/<%= current_user.id %>">profile</a></li>
+
           <% else %>
               <li><a href="/sessions/new">sign in</a></li>
               <li><a href="/users/new">sign up</a></li>
