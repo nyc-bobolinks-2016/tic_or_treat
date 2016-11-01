@@ -10,22 +10,22 @@ class GameBoard extends React.Component {
 
 
   handleClick(event){
-    event.preventDefault();
-
     var boxId = $(event.target).attr('id'),
         $target = $(event.target);
-    console.log(boxId)
+    // console.log(boxId)
+
     $.ajax({
       url: '/games/update',
       type: "patch",
       data: {game: {id: boxId}}
-    }).done((response) => {
-      console.log(response)
+    }).done( (response) => {
       $target.addClass("img-user")
 
-      if (response == "user") {
+      if (response.winner === "user") {
+          console.log(response)
         alert("You Won")
-      } else if (response == "comp"){
+      } else if (response.winner === "comp"){
+          console.log(response)
         alert("You lost")
       } else {
       if (response != "false") {
