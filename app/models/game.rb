@@ -12,5 +12,10 @@ class Game < ApplicationRecord
 
   def game_time
     (self.created_at - self.updated_at) / 1000
+
+  def update_board(idx)
+    a = self.board
+    a[idx] = 'X'
+    a
   end
 end
