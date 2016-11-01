@@ -5,16 +5,40 @@
     <h5>summary</h5>
       <table class="bordered striped centered">
           <tr>
-            <th>games played</th>
+            <th>games total</th>
+            <th>games completed</th>
             <th>games won</th>
             <th>games lost</th>
+            <th>games pending</th>
           </tr>
           <tr>
-            <td><%=@user.games.count %></td>
-            <td><%=@user.games_won.count %></td>
-            <td><%=@user.games_lost.count %></td>
+            <td><%= current_user.games.count %></td>
+            <td><%= current_user.games_completed.count %></td>
+            <td><%= current_user.games_won.count %></td>
+            <td><%= current_user.games_lost.count %></td>
+            <td><%= current_user.games_pending.count %></td>
           </tr>
       </table>
+  </div>
+  <br><br>
+  <div>
+    <h5>in progress</h5>
+    <table class="bordered striped centered">
+      <tr>
+        <th>game</th>
+        <th>started</th>
+        <th>time</th>
+        <th>action</th>
+      </tr>
+      <% current_user.games_pending.each do |game| %>
+      <tr>
+        <td><%= game.id %></td>
+        <td><%= game.created_at.strftime('%D') %></td>
+        <td><%= game.game_time %></td>
+        <td><a href="/games/<%= game.id %>">resume</a></td>
+      </tr>
+      <% end %>
+    </table>
   </div>
   <br><br>
   <div>
@@ -26,27 +50,7 @@
         <th>time</th>
         <th>status</th>
       </tr>
-      <% @user.games.each do |game| %>
-      <tr>
-        <td><%= game.id %></td>
-        <td><%= game.created_at.strftime('%D') %></td>
-        <td><%= game.game_time %></td>
-        <td><%= game.game_status %></td>
-      </tr>
-      <% end %>
-    </table>
-  </div>
-  <br><br>
-  <div>
-    <h5>in progress</h5>
-    <table class="bordered striped centered">
-      <tr>
-        <th>game</th>
-        <th>date</th>
-        <th>time</th>
-        <th>status</th>
-      </tr>
-      <% @user.games.each do |game| %>
+      <% current_user.games_completed.each do |game| %>
       <tr>
         <td><%= game.id %></td>
         <td><%= game.created_at.strftime('%D') %></td>
