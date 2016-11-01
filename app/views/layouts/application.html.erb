@@ -11,10 +11,10 @@
   <body>
     <nav>
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo">home</a>
+        <a href="/" class="brand-logo">home</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <!-- Replace sessions with current_user helper method -->
-          <% if p current_user %>
+          <% if current_user %>
+            <li><a href="/users/<%= current_user.id %>"><%= current_user.username %></a></li>
             <li><a href="/sessions/delete">logout</a></li>
           <% else %>
               <li><a href="/sessions/new">sign in</a></li>

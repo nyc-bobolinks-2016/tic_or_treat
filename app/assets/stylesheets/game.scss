@@ -1,3 +1,29 @@
 // Place all the styles related to the Game controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.container {
+  max-width: 960px;
+  min-width: 450px;
+  text-align: center;
+  margin: auto;
+}
+
+.nav-wrapper {
+  background-color: purple;
+}
+.playButton {
+  width: 200px;
+  height: 50px;
+  border-radius: 5px;
+  margin-top: 25%;
+  background-color: purple;
+}
+#description {
+  text-indent: 50px;
+  text-align: left;
+  font-size: 16px;
+}
+.playButton:hover {
+  background-color: orange;
+  color: black;
+}
