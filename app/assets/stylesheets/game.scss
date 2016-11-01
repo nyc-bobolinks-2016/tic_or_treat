@@ -4,47 +4,63 @@
 .container {
   max-width: 960px;
   min-width: 450px;
-  text-align: center;
   margin: auto;
+  margin-top: 3%;
 }
 
 .nav-wrapper {
-  background-color: purple;
+  background-color: #B378D3;
 }
-.playButton {
+.purpleButton {
   width: 200px;
   height: 50px;
   border-radius: 5px;
-  margin-top: 25%;
-  background-color: purple;
+  margin-top: 15%;
+  background-color: #B378D3;
 }
 #description {
   text-indent: 50px;
   text-align: left;
   font-size: 16px;
 }
-.playButton:hover {
-  background-color: orange;
+.purpleButton:hover {
+  background-color: #ffa500;
   color: black;
 }
 
 .gameBoard {
-  background-color: orange;
-  padding: 0;
-  padding-top: 0;
+  // background-color: orange;
   background-image: url('http://sdumontaubrey.htpwebdesign.ca/javagame/production/TWD-JAVA-gameboard.png');
   background-size: contain;
   width: 600px;
   height: 600px;
   margin: auto;
-  margin-top: 5%;
 }
 
+div {
+  margin: 0;
+  padding: 0;
+}
 div .board-col {
   box-sizing: border-box;
   display: inline-block;
-  margin: 0 0 0 0;
-  width: 195px;
-  background-color: green;
-  height: 195px;
+  margin: 0;
+  width: 197px;
+  // background-color: green;
+  height: 197px;
 }
+
+.row {
+  // background-color: blue;
+  padding-bottom: 0;
+  margin: 0;
+}
+
+.input-field input:focus + label {
+   color: #ffa500 !important;
+ }
+
+ .row .input-field input:focus {
+   border-bottom: 1px solid gold !important;
+   box-shadow: 0 1px 0 0 #ffa500 !important
+ }
