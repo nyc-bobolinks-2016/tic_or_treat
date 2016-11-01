@@ -1,8 +1,4 @@
 {:uriI"Ëfile:///Users/apprentice/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/materialize-sass-0.97.7/app/assets/fonts/roboto/Roboto-Light.ttf?type=application/x-font-ttf&id=d17ec9fa62a2e02e4c03b66e84662b0e25a43293bb594d58506fd5ccf8dd896e:ET:load_pathI"n/Users/apprentice/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/materialize-sass-0.97.7/app/assets/fonts;T:filenameI"Å/Users/apprentice/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/materialize-sass-0.97.7/app/assets/fonts/roboto/Roboto-Light.ttf;T:	nameI"roboto/Roboto-Light;T:logical_pathI"roboto/Roboto-Light.ttf;T:content_typeI"application/x-font-ttf;T:source0:metadata{:digest"%ÓCRñÂñPıTD≠rçL„"¿‹∫¸wﬁxƒ0–’:lengthiHÔ:dependencieso:Set:
 @hash}
 I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"Lprocessors:type=application/x-font-ttf&file_type=application/x-font-ttf;TTI"èfile-digest:///Users/apprentice/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/materialize-sass-0.97.7/app/assets/fonts/roboto/Roboto-Light.ttf;TTF:dependencies_digest"%∆ÁÊ_ºLÁ\≈ßßèÁM7áü”‘œT±ˇ.Î"‘^:idI"Ed17ec9fa62a2e02e4c03b66e84662b0e25a43293bb594d58506fd5ccf8dd896e;F:
-<<<<<<< HEAD
 mtimel+ÅÄX
-=======
-mtimel+xµX
->>>>>>> add login and logout routes and html
