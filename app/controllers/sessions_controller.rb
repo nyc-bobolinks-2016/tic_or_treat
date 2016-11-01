@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   protect_from_forgery
-  skip_before_filter :verify_authenticity_token
+  
   def new
   end
 
