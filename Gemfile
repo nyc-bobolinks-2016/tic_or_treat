@@ -13,9 +13,11 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
-
+# Use bcrypf for encripting user passwords
 gem 'bcrypt'
-
+# Use react-rails gem for reactifying front end
+gem 'react-rails'
+# Use materialize for styling
 gem 'materialize-sass'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

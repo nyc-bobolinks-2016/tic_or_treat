@@ -27,3 +27,24 @@
   background-color: orange;
   color: black;
 }
+
+.gameBoard {
+  background-color: orange;
+  padding: 0;
+  padding-top: 0;
+  background-image: url('http://sdumontaubrey.htpwebdesign.ca/javagame/production/TWD-JAVA-gameboard.png');
+  background-size: contain;
+  width: 600px;
+  height: 600px;
+  margin: auto;
+  margin-top: 5%;
+}
+
+div .board-col {
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0 0 0 0;
+  width: 195px;
+  background-color: green;
+  height: 195px;
+}

@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Tic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" media="screen" title="no title">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -11,7 +12,7 @@
   <body>
     <nav>
       <div class="nav-wrapper">
-        <a href="/" class="brand-logo">home</a>
+        <a href="/" class="brand-logo"><img src='https://icon.apkmirrordownload.com/com.tictactoefree.png' class='logo'></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if current_user %>
             <li><a href="/users/<%= current_user.id %>"><%= current_user.username %></a></li>
