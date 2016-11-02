@@ -11,28 +11,28 @@ class GameBoard extends React.Component {
 
   handleClick(event){
     var boxId = $(event.target).attr('id'),
-        $target = $(event.target);
-    // console.log(boxId)
-
-    $.ajax({
-      url: '/games/update',
-      type: "patch",
-      data: {game: {id: boxId}}
-    }).done( (response) => {
-      $target.addClass("img-user")
-
-      if (response.winner === "user") {
-          console.log(response)
-        alert("You Won")
-      } else if (response.winner === "comp"){
-          console.log(response)
-        alert("You lost")
-      } else {
-      if (response != "false") {
-          $("#" + response).addClass("img-comp")
-        }
-      }
-    })
+        $target = $(event.target),
+        clicked = $target.attr('class').indexOf("clicked"),
+        gameOver = $('.gameBoard').attr('class').indexOf("finished");
+    if(clicked <= 0 && gameOver <= 0){
+      $.ajax({
+        url: '/games/update',
+        type: "patch",
+        data: {game: {id: boxId}}
+      }).done( (response) => {
+        console.log('ajax worked');
+          $target.addClass("img-user clicked");
+          if(response != 'false' && response.winner != "user" && response.winner != 'comp'){
+            $("#" + response).addClass("img-comp");
+          } else if (response.winner === "user") {
+              $('.gameBoard').addClass("finished");
+              console.log("User won")
+          } else if (response.winner === "comp"){
+              $('.gameBoard').addClass("finished");
+              console.log("User lost")
+          }
+        })
+    }
   }
 
   render(){
