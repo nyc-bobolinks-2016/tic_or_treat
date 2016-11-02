@@ -1,10 +1,11 @@
 class GamesController < ApplicationController
+
   def index
   end
 
   def new
     game = Game.create(board:"---------",
-                user_id: current_user.id,
+                user_id: set_user.id,
                 outcome: 2
                 )
     session[:game_id] = game.id
@@ -41,5 +42,10 @@ class GamesController < ApplicationController
           render json: "false"
         end
       end
+  end
+  private
+
+  def set_user
+    User.find_by(id: session[:user_id]) || User.find_by(id: 1)
   end
 end
