@@ -11,7 +11,8 @@ class Game < ApplicationRecord
   end
 
   def game_time
-    (self.created_at - self.updated_at) / 1000
+    Time.now  - self.updated_at
+    # (self.updated_at - self.created_at).round(2)
   end
 
 
@@ -20,11 +21,11 @@ class Game < ApplicationRecord
     if self.board.chars[0..2].all? {|letter| letter == mark} ||
       self.board.chars[3..5].all? {|letter| letter == mark} ||
       self.board.chars[6..8].all? {|letter| letter == mark} ||
-      self.board.chars[0] == mark && self.board.chars[4]  == mark && self.board.chars[8]  == mark ||
-      self.board.chars[2] == mark && self.board.chars[4]  == mark && self.board.chars[6]  == mark ||
-      self.board.chars[0] == mark && self.board.chars[3]  == mark && self.board.chars[6]  == mark ||
-      self.board.chars[1] == mark && self.board.chars[4]  == mark && self.board.chars[7]  == mark ||
-      self.board.chars[2] == mark && self.board.chars[5]  == mark && self.board.chars[8]  == mark
+      self.board.chars[0] == mark && self.board.chars[4] == mark && self.board.chars[8] == mark ||
+      self.board.chars[2] == mark && self.board.chars[4] == mark && self.board.chars[6] == mark ||
+      self.board.chars[0] == mark && self.board.chars[3] == mark && self.board.chars[6] == mark ||
+      self.board.chars[1] == mark && self.board.chars[4] == mark && self.board.chars[7] == mark ||
+      self.board.chars[2] == mark && self.board.chars[5] == mark && self.board.chars[8] == mark
       return true
     else
       return false
@@ -40,37 +41,159 @@ class Game < ApplicationRecord
   def computer_guess
     board_change = self.board
     empties = self.board.chars.map.with_index {|space, index| index if space == "-"}.compact
-    empties
+    p board_change[0] == "X"
+    p board_change[4] == "X"
+    p board_change[8] == "-"
 
-    if empties.length < 7
-      if board_change[0] == 'X' && board_change[4] == ['X'] && board_change[8] == "-"
+      if board_change[0] == 'X' && board_change[4] == 'X' && board_change[8] == "-"
         board_change[8] = "O"
         [8, board_change]
-      elsif board_change[4] == 'X' && board_change[8] == ['X'] && board_change[0] == "-"
+      elsif board_change[4] == 'X' && board_change[8] == 'X' && board_change[0] == "-"
         board_change[0] = "O"
         [0, board_change]
-      elsif board_change[0] == 'X' && board_change[8] == ['X'] && board_change[4] == "-"
+      elsif board_change[0] == 'X' && board_change[8] == 'X' && board_change[4] == "-"
         board_change[4] = "O"
         [4, board_change]
-      elsif board_change[2] == 'X' && board_change[4] == ['X'] && board_change[6] == "-"
+      elsif board_change[2] == 'X' && board_change[4] == 'X' && board_change[6] == "-"
         board_change[6] = "O"
         [6, board_change]
-      elsif board_change[6] == 'X' && board_change[4] == ['X'] && board_change[2] == "-"
+      elsif board_change[6] == 'X' && board_change[4] == 'X' && board_change[2] == "-"
         board_change[2] = "O"
         [2, board_change]
-      elsif board_change[6] == 'X' && board_change[2] == ['X'] && board_change[4] == "-"
+      elsif board_change[6] == 'X' && board_change[2] == 'X' && board_change[4] == "-"
         board_change[4] = "O"
         [4, board_change]
+      elsif board_change[0] == 'X' && board_change[1] == 'X' && board_change[2] == "-"
+        board_change[2] = "O"
+        [2, board_change]
+      elsif board_change[0] == 'X' && board_change[2] == 'X' && board_change[1] == "-"
+        board_change[1] = "O"
+        [1, board_change]
+      elsif board_change[1] == 'X' && board_change[2] == 'X' && board_change[0] == "-"
+        board_change[0] = "O"
+        [0, board_change]
+      elsif board_change[3] == 'X' && board_change[4] == 'X' && board_change[5] == "-"
+        board_change[5] = "O"
+        [5, board_change]
+      elsif board_change[4] == 'X' && board_change[5] == 'X' && board_change[3] == "-"
+        board_change[3] = "O"
+        [3, board_change]
+      elsif board_change[5] == 'X' && board_change[3] == 'X' && board_change[4] == "-"
+        board_change[4] = "O"
+        [4, board_change]
+      elsif board_change[6] == 'X' && board_change[7] == 'X' && board_change[8] == "-"
+        board_change[8] = "O"
+        [8, board_change]
+      elsif board_change[7] == 'X' && board_change[8] == 'X' && board_change[6] == "-"
+        board_change[6] = "O"
+        [6, board_change]
+      elsif board_change[8] == 'X' && board_change[6] == 'X' && board_change[7] == "-"
+        board_change[7] = "O"
+        [7, board_change]
+      elsif board_change[0] == 'X' && board_change[3] == 'X' && board_change[6] == "-"
+        board_change[6] = "O"
+        [6, board_change]
+      elsif board_change[3] == 'X' && board_change[6] == 'X' && board_change[0] == "-"
+        board_change[0] = "O"
+        [0, board_change]
+      elsif board_change[6] == 'X' && board_change[0] == 'X' && board_change[3] == "-"
+        board_change[3] = "O"
+        [3, board_change]
+      elsif board_change[1] == 'X' && board_change[4] == 'X' && board_change[7] == "-"
+        board_change[7] = "O"
+        [7, board_change]
+      elsif board_change[4] == 'X' && board_change[7] == 'X' && board_change[1] == "-"
+        board_change[1] = "O"
+        [1, board_change]
+      elsif board_change[7] == 'X' && board_change[1] == 'X' && board_change[4] == "-"
+        board_change[4] = "O"
+        [4, board_change]
+      elsif board_change[2] == 'X' && board_change[5] == 'X' && board_change[8] == "-"
+        board_change[8] = "O"
+        [8, board_change]
+      elsif board_change[5] == 'X' && board_change[8] == 'X' && board_change[2] == "-"
+        board_change[2] = "O"
+        [2, board_change]
+      elsif board_change[8] == 'X' && board_change[2] == 'X' && board_change[5] == "-"
+        board_change[5] = "O"
+        [5, board_change]
+      elsif board_change[0] == 'O' && board_change[4] == 'O' && board_change[8] == "-"
+          board_change[8] = "O"
+          [8, board_change]
+        elsif board_change[4] == 'O' && board_change[8] == 'O' && board_change[0] == "-"
+          board_change[0] = "O"
+          [0, board_change]
+        elsif board_change[0] == 'O' && board_change[8] == 'O' && board_change[4] == "-"
+          board_change[4] = "O"
+          [4, board_change]
+        elsif board_change[2] == 'O' && board_change[4] == 'O' && board_change[6] == "-"
+          board_change[6] = "O"
+          [6, board_change]
+        elsif board_change[6] == 'O' && board_change[4] == 'O' && board_change[2] == "-"
+          board_change[2] = "O"
+          [2, board_change]
+        elsif board_change[6] == 'O' && board_change[2] == 'O' && board_change[4] == "-"
+          board_change[4] = "O"
+          [4, board_change]
+        elsif board_change[0] == 'O' && board_change[1] == 'O' && board_change[2] == "-"
+          board_change[2] = "O"
+          [2, board_change]
+        elsif board_change[0] == 'O' && board_change[2] == 'O' && board_change[1] == "-"
+          board_change[1] = "O"
+          [1, board_change]
+        elsif board_change[1] == 'O' && board_change[2] == 'O' && board_change[0] == "-"
+          board_change[0] = "O"
+          [0, board_change]
+        elsif board_change[3] == 'O' && board_change[4] == 'O' && board_change[5] == "-"
+          board_change[5] = "O"
+          [5, board_change]
+        elsif board_change[4] == 'O' && board_change[5] == 'O' && board_change[3] == "-"
+          board_change[3] = "O"
+          [3, board_change]
+        elsif board_change[5] == 'O' && board_change[3] == 'O' && board_change[4] == "-"
+          board_change[4] = "O"
+          [4, board_change]
+        elsif board_change[6] == 'O' && board_change[7] == 'O' && board_change[8] == "-"
+          board_change[8] = "O"
+          [8, board_change]
+        elsif board_change[7] == 'O' && board_change[8] == 'O' && board_change[6] == "-"
+          board_change[6] = "O"
+          [6, board_change]
+        elsif board_change[8] == 'O' && board_change[6] == 'O' && board_change[7] == "-"
+          board_change[7] = "O"
+          [7, board_change]
+        elsif board_change[0] == 'O' && board_change[3] == 'O' && board_change[6] == "-"
+          board_change[6] = "O"
+          [6, board_change]
+        elsif board_change[3] == 'O' && board_change[6] == 'O' && board_change[0] == "-"
+          board_change[0] = "O"
+          [0, board_change]
+        elsif board_change[6] == 'O' && board_change[0] == 'O' && board_change[3] == "-"
+          board_change[3] = "O"
+          [3, board_change]
+        elsif board_change[1] == 'O' && board_change[4] == 'O' && board_change[7] == "-"
+          board_change[7] = "O"
+          [7, board_change]
+        elsif board_change[4] == 'O' && board_change[7] == 'O' && board_change[1] == "-"
+          board_change[1] = "O"
+          [1, board_change]
+        elsif board_change[7] == 'O' && board_change[1] == 'O' && board_change[4] == "-"
+          board_change[4] = "O"
+          [4, board_change]
+        elsif board_change[2] == 'O' && board_change[5] == 'O' && board_change[8] == "-"
+          board_change[8] = "O"
+          [8, board_change]
+        elsif board_change[5] == 'O' && board_change[8] == 'O' && board_change[2] == "-"
+          board_change[2] = "O"
+          [2, board_change]
+        elsif board_change[8] == 'O' && board_change[2] == 'O' && board_change[5] == "-"
+          board_change[5] = "O"
+          [5, board_change]
       else
           idx = empties.shuffle.first
           self.board[idx] = "O"
           [idx, board_change]
       end
-    else
-        idx = empties.shuffle.first
-        self.board[idx] = "O"
-        [idx, board_change]
-    end
   end
 
 
