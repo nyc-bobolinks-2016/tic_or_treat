@@ -46,15 +46,24 @@ class GameBoard extends React.Component {
       }).done( (response) => {
         console.log('ajax worked');
           $target.addClass("img-user clicked");
-          if(response != 'false' && response.winner != "user" && response.winner != 'comp'){
+          if(response.winner != 'tie' && response.winner != "user" && response.winner != 'comp'){
             $("#" + response).addClass("img-comp");
           } else if (response.winner === "user") {
               $('.gameBoard').addClass("finished");
+              $('.container').prepend("<div class='center'><a href='/games/new'>Play Again</a></div>")
               $('.container').prepend('<div class="center message">You Won!</div>')
           } else if (response.winner === "comp"){
               $("#" + response.move).addClass("img-comp");
               $('.gameBoard').addClass("finished");
+              $('.container').prepend("<div class='center'><a href='/games/new'>Play Again</a></div>")
               $('.container').prepend('<div class="center message">You Lost!</div>')
+
+              console.log("User lost")
+          } else {
+              $('.gameBoard').addClass("finished");
+              $('.container').prepend("<div class='center'><a href='/games/new'>Play Again</a></div>")
+              $('.container').prepend('<div class="center message">You Tied!</div>')
+              console.log("Game tied")
           }
         })
     }

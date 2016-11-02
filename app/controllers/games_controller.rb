@@ -39,8 +39,9 @@ class GamesController < ApplicationController
           else
             render json: newer_board.first.to_s
           end
-        else
-          render json: "false"
+        else # at this point there are no empty spaces so the game is over
+          game.update(outcome: 0)
+          render json: {winner: 'tie'}
         end
       end
   end
