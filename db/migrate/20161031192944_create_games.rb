@@ -4,6 +4,7 @@ class CreateGames < ActiveRecord::Migration[5.0]
       t.references :user, index: true, null: false
       t.string :board, null: false
       t.integer :outcome, null: false #can be -1 0 and 1 for lose draw and win
+      t.decimal :time_played, default: 0
 
       t.timestamps(null: false)
     end

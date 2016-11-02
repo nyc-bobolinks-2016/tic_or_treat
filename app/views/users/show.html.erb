@@ -27,14 +27,14 @@
       <tr>
         <th>game</th>
         <th>started</th>
-        <th>time</th>
+        <th>time(seconds)</th>
         <th>action</th>
       </tr>
       <% current_user.games_pending.each do |game| %>
       <tr>
         <td><%= game.id %></td>
         <td><%= game.created_at.strftime('%D') %></td>
-        <td><%= game.game_time %></td>
+        <td><%= game.time_played * 1000 %></td>
         <td><a href="/games/<%= game.id %>">resume</a></td>
       </tr>
       <% end %>
@@ -47,14 +47,14 @@
       <tr>
         <th>game</th>
         <th>date</th>
-        <th>time</th>
+        <th>time(seconds)</th>
         <th>status</th>
       </tr>
       <% current_user.games_completed.each do |game| %>
       <tr>
         <td><%= game.id %></td>
         <td><%= game.created_at.strftime('%D') %></td>
-        <td><%= game.game_time %></td>
+        <td><%= game.time_played * 1000 %></td>
         <td><%= game.game_status %></td>
       </tr>
       <% end %>

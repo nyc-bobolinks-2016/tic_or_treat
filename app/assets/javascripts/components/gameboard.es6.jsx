@@ -7,14 +7,29 @@ class GameBoard extends React.Component {
       this.handleClick = this.handleClick.bind(this)
     }
 
-
+    componentDidMount(){
+      this.setState({
+        board: this.props.data
+      })
+      console.log("hello")
+      console.log(this.props.data)
+      for(var i = 0; i < 9; i++){
+        let char = this.props.data[i]
+        if(char == 'X'){
+          $('#' + i.toString()).addClass('img-user');
+        } else if(char == 'O'){
+          $('#' + i.toString()).addClass('img-comp');
+        }
+      }
+    }
 
   handleClick(event){
     var boxId = $(event.target).attr('id'),
         $target = $(event.target),
         clicked = $target.attr('class').indexOf("clicked"),
         gameOver = $('.gameBoard').attr('class').indexOf("finished");
-    if(clicked <= 0 && gameOver <= 0){
+
+    if(clicked < 0 && gameOver < 0){
       $.ajax({
         url: '/games/update',
         type: "patch",
@@ -28,6 +43,7 @@ class GameBoard extends React.Component {
               $('.gameBoard').addClass("finished");
               console.log("User won")
           } else if (response.winner === "comp"){
+              $("#" + response.move).addClass("img-comp");
               $('.gameBoard').addClass("finished");
               console.log("User lost")
           }

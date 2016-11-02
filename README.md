@@ -6,3 +6,9 @@ https://trello.com/b/dsRhPfM9/tic-tac-toe
 
 Wireframe:
 https://www.gliffy.com/go/html5/11379289?=
+
+
+win/lose notification with results
+
+
+5x5 board
