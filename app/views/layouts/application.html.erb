@@ -14,7 +14,7 @@
       <div class="nav-wrapper">
         <a href="/" class="brand-logo"><img src='https://icon.apkmirrordownload.com/com.tictactoefree.png' class='logo'></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <% if current_user %>
+          <% if current_user && current_user.id != 1 %>
             <li><a href="/users/<%= current_user.id %>"><%= current_user.username %></a></li>
             <li><a href="/sessions/delete">logout</a></li>
 
