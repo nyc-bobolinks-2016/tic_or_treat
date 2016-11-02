@@ -13,8 +13,8 @@ class GamesController < ApplicationController
   end
 
   def show
-    game_owner = Game.find_by(id: params[:id]).user_id
-    redirect_to root_path if session[:user_id] == 1 || game_owner != session[:user_id]  
+    # game_owner_id = Game.find_by(id: params[:id]).user_id
+    # redirect_to root_path if !session[:user_id] || game_owner_id != session[:user_id]
     game = Game.find_by(id: params[:id])
     session[:game_id] = game.id
     @board = game.board

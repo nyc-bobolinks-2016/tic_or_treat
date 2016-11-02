@@ -2,13 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .img-user {
-  background-image: url("http://www.drodd.com/images15/red-x22.png");
-  background-size: contain;
+  background-image: image-url("x_icon.png");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .img-comp {
-  background-image: url("https://wecanblaze.files.wordpress.com/2012/03/paint-circle-e1333054005747.jpg");
-  background-size: contain;
+  background-image: image-url("o_icon.png");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .container {
