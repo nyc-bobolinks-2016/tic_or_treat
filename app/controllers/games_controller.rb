@@ -16,10 +16,11 @@ class GamesController < ApplicationController
     game = Game.find_by(id: params[:id])
     session[:game_id] = game.id
     @board = game.board
+    @outcome = game.outcome
   end
 
   def update
-      game = Game.find_by(id: session[:game_id])
+    game = Game.find_by(id: session[:game_id])
       idx = params[:game][:id].to_i
       new_board = game.update_board(idx)
       game.update(board: new_board)

@@ -52,7 +52,7 @@
       </tr>
       <% current_user.games_completed.each do |game| %>
       <tr>
-        <td><%= game.id %></td>
+        <td><a href="/games/<%= game.id %>"><%= game.id %></a></td>
         <td><%= game.created_at.strftime('%D') %></td>
         <td><%= game.time_played * 1000 %></td>
         <td><%= game.game_status %></td>

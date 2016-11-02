@@ -19,6 +19,9 @@ class GameBoard extends React.Component {
           $('#' + i.toString()).addClass('img-comp');
         }
       }
+      if(this.props.outcome != 2){
+        $('.gameBoard').addClass('finished')
+      }
     }
 
   handleClick(event){
