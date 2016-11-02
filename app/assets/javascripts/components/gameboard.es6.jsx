@@ -11,8 +11,6 @@ class GameBoard extends React.Component {
       this.setState({
         board: this.props.data
       })
-      console.log("hello")
-      console.log(this.props.data)
       for(var i = 0; i < 9; i++){
         let char = this.props.data[i]
         if(char == 'X'){

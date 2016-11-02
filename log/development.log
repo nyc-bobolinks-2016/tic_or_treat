@@ -11839,3 +11839,1218 @@ Processing by GamesController#update as */*
 Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 4.2ms)
 
 
+Started GET "/" for ::1 at 2016-11-02 09:17:37 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 4186ms (Views: 4160.6ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 09:17:43 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 146ms (Views: 143.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games/new" for ::1 at 2016-11-02 09:17:45 -0400
+Processing by GamesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "board", "outcome", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["board", "---------"], ["outcome", 2], ["created_at", 2016-11-02 13:17:45 UTC], ["updated_at", 2016-11-02 13:17:45 UTC]]
+  [1m[35m (15.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/41
+Completed 302 Found in 63ms (ActiveRecord: 19.4ms)
+
+
+Started GET "/games/41" for ::1 at 2016-11-02 09:17:45 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 95ms (Views: 75.7ms | ActiveRecord: 1.4ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:17:46 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"4"}, "id"=>"update"}
+  [1m[36mGame Load (0.9ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "----X----"], ["updated_at", 2016-11-02 13:17:46 UTC], ["id", 41]]
+  [1m[35m (15.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "-O--X----"], ["updated_at", 2016-11-02 13:17:46 UTC], ["id", 41]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82fb5afdb8,'0.2527E-2',9(36)>], ["updated_at", 2016-11-02 13:17:46 UTC], ["id", 41]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 35ms (Views: 0.2ms | ActiveRecord: 20.3ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:17:47 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"8"}, "id"=>"update"}
+  [1m[36mGame Load (0.9ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "-O--X---X"], ["updated_at", 2016-11-02 13:17:47 UTC], ["id", 41]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "OO--X---X"], ["updated_at", 2016-11-02 13:17:47 UTC], ["id", 41]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82fc920898,'0.4443E-2',9(36)>], ["updated_at", 2016-11-02 13:17:47 UTC], ["id", 41]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 4.1ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:17:49 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"2"}, "id"=>"update"}
+  [1m[36mGame Load (0.9ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "OOX-X---X"], ["updated_at", 2016-11-02 13:17:49 UTC], ["id", 41]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "OOX-X-O-X"], ["updated_at", 2016-11-02 13:17:49 UTC], ["id", 41]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82fb5f6678,'0.6504E-2',9(36)>], ["updated_at", 2016-11-02 13:17:49 UTC], ["id", 41]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 4.2ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:17:49 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"5"}, "id"=>"update"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "OOX-XXO-X"], ["updated_at", 2016-11-02 13:17:49 UTC], ["id", 41]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "outcome" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["outcome", 1], ["updated_at", 2016-11-02 13:17:49 UTC], ["id", 41]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users/2" for ::1 at 2016-11-02 09:17:55 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "games" WHERE "games"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (32.2ms)
+Completed 200 OK in 109ms (Views: 104.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/games/18" for ::1 at 2016-11-02 09:18:01 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 82ms (Views: 78.0ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:18:03 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"2"}, "id"=>"update"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "XXXOXOXOO"], ["updated_at", 2016-11-02 13:18:03 UTC], ["id", 18]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "outcome" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["outcome", 1], ["updated_at", 2016-11-02 13:18:03 UTC], ["id", 18]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users/2" for ::1 at 2016-11-02 09:18:08 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "games" WHERE "games"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 100ms (Views: 95.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 09:18:16 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 81ms (Views: 79.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games/new" for ::1 at 2016-11-02 09:18:17 -0400
+Processing by GamesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "board", "outcome", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["board", "---------"], ["outcome", 2], ["created_at", 2016-11-02 13:18:17 UTC], ["updated_at", 2016-11-02 13:18:17 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/42
+Completed 302 Found in 7ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/games/42" for ::1 at 2016-11-02 09:18:17 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 121ms (Views: 117.6ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:18:27 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"4"}, "id"=>"update"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "----X----"], ["updated_at", 2016-11-02 13:18:27 UTC], ["id", 42]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "----X---O"], ["updated_at", 2016-11-02 13:18:27 UTC], ["id", 42]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82f6ab0790,'0.1788E-2',9(36)>], ["updated_at", 2016-11-02 13:18:27 UTC], ["id", 42]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 3.0ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:18:29 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"2"}, "id"=>"update"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "--X-X---O"], ["updated_at", 2016-11-02 13:18:29 UTC], ["id", 42]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "--X-X-O-O"], ["updated_at", 2016-11-02 13:18:29 UTC], ["id", 42]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82fd9ab258,'0.6189E-2',9(36)>], ["updated_at", 2016-11-02 13:18:29 UTC], ["id", 42]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 5.6ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:18:30 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"0"}, "id"=>"update"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "X-X-X-O-O"], ["updated_at", 2016-11-02 13:18:30 UTC], ["id", 42]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "XOX-X-O-O"], ["updated_at", 2016-11-02 13:18:30 UTC], ["id", 42]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82fd41dc50,'0.104E-1',9(36)>], ["updated_at", 2016-11-02 13:18:30 UTC], ["id", 42]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 5.5ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:18:32 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"7"}, "id"=>"update"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "XOX-X-OXO"], ["updated_at", 2016-11-02 13:18:32 UTC], ["id", 42]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "XOXOX-OXO"], ["updated_at", 2016-11-02 13:18:32 UTC], ["id", 42]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82f5de7680,'0.14599E-1',9(36)>], ["updated_at", 2016-11-02 13:18:32 UTC], ["id", 42]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 5.0ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:18:33 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"5"}, "id"=>"update"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "XOXOXXOXO"], ["updated_at", 2016-11-02 13:18:33 UTC], ["id", 42]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/2" for ::1 at 2016-11-02 09:18:35 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "games" WHERE "games"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 111ms (Views: 107.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 09:22:16 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 110ms (Views: 104.8ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/sessions/delete" for ::1 at 2016-11-02 09:22:18 -0400
+Processing by SessionsController#delete as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 09:22:18 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 90ms (Views: 87.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games/new" for ::1 at 2016-11-02 09:22:19 -0400
+Processing by GamesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/games_controller.rb:8:in `new'
+  Rendering /Users/apprentice/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/apprentice/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /Users/apprentice/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/apprentice/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (121.8ms)
+Started GET "/games/new" for ::1 at 2016-11-02 09:26:15 -0400
+  
+SyntaxError (/Users/apprentice/tic-tac-toe/tic_or_treat/app/controllers/games_controller.rb:50: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/games_controller.rb:50: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /Users/apprentice/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/apprentice/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /Users/apprentice/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/apprentice/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/apprentice/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (92.3ms)
+Started GET "/games/new" for ::1 at 2016-11-02 09:26:24 -0400
+Processing by GamesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "board", "outcome", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["board", "---------"], ["outcome", 2], ["created_at", 2016-11-02 13:26:24 UTC], ["updated_at", 2016-11-02 13:26:24 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/43
+Completed 302 Found in 27ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/games/43" for ::1 at 2016-11-02 09:26:24 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"43"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 85ms (Views: 79.7ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:26:26 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"4"}, "id"=>"update"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "----X----"], ["updated_at", 2016-11-02 13:26:26 UTC], ["id", 43]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "--O-X----"], ["updated_at", 2016-11-02 13:26:26 UTC], ["id", 43]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82f4753130,'0.1984E-2',9(36)>], ["updated_at", 2016-11-02 13:26:26 UTC], ["id", 43]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 3.2ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:26:27 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"0"}, "id"=>"update"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "X-O-X----"], ["updated_at", 2016-11-02 13:26:27 UTC], ["id", 43]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "X-O-X---O"], ["updated_at", 2016-11-02 13:26:27 UTC], ["id", 43]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82fd8ab920,'0.6256E-2',9(36)>], ["updated_at", 2016-11-02 13:26:27 UTC], ["id", 43]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 5.4ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:26:28 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"6"}, "id"=>"update"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "X-O-X-X-O"], ["updated_at", 2016-11-02 13:26:28 UTC], ["id", 43]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "X-OOX-X-O"], ["updated_at", 2016-11-02 13:26:28 UTC], ["id", 43]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82f47ab7e0,'0.8006E-2',9(36)>], ["updated_at", 2016-11-02 13:26:28 UTC], ["id", 43]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 3.0ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:26:29 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"5"}, "id"=>"update"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "X-OOXXX-O"], ["updated_at", 2016-11-02 13:26:29 UTC], ["id", 43]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "XOOOXXX-O"], ["updated_at", 2016-11-02 13:26:29 UTC], ["id", 43]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82f47e2a38,'0.12318E-1',9(36)>], ["updated_at", 2016-11-02 13:26:29 UTC], ["id", 43]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 5.5ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:26:29 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"7"}, "id"=>"update"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "XOOOXXXXO"], ["updated_at", 2016-11-02 13:26:29 UTC], ["id", 43]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 09:26:31 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 77ms (Views: 74.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games/new" for ::1 at 2016-11-02 09:27:12 -0400
+Processing by GamesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "board", "outcome", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["board", "---------"], ["outcome", 2], ["created_at", 2016-11-02 13:27:12 UTC], ["updated_at", 2016-11-02 13:27:12 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/44
+Completed 302 Found in 8ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/games/44" for ::1 at 2016-11-02 09:27:12 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 94ms (Views: 90.1ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:27:13 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"4"}, "id"=>"update"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "----X----"], ["updated_at", 2016-11-02 13:27:13 UTC], ["id", 44]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "----X--O-"], ["updated_at", 2016-11-02 13:27:13 UTC], ["id", 44]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82fc9addb0,'0.4045E-2',9(36)>], ["updated_at", 2016-11-02 13:27:13 UTC], ["id", 44]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 4.9ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:27:14 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"5"}, "id"=>"update"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "----XX-O-"], ["updated_at", 2016-11-02 13:27:14 UTC], ["id", 44]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "---OXX-O-"], ["updated_at", 2016-11-02 13:27:14 UTC], ["id", 44]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82f450bd00,'0.5897E-2',9(36)>], ["updated_at", 2016-11-02 13:27:14 UTC], ["id", 44]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 3.0ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:27:14 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"2"}, "id"=>"update"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "--XOXX-O-"], ["updated_at", 2016-11-02 13:27:14 UTC], ["id", 44]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "--XOXXOO-"], ["updated_at", 2016-11-02 13:27:14 UTC], ["id", 44]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82fc88bf18,'0.9761E-2',9(36)>], ["updated_at", 2016-11-02 13:27:14 UTC], ["id", 44]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 5.0ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:27:15 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"0"}, "id"=>"update"}
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "X-XOXXOO-"], ["updated_at", 2016-11-02 13:27:15 UTC], ["id", 44]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "X-XOXXOOO"], ["updated_at", 2016-11-02 13:27:15 UTC], ["id", 44]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82fc82bed8,'0.11524E-1',9(36)>], ["updated_at", 2016-11-02 13:27:15 UTC], ["id", 44]]
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "outcome" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["outcome", -1], ["updated_at", 2016-11-02 13:27:15 UTC], ["id", 44]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 09:27:17 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 84ms (Views: 81.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/games/new" for ::1 at 2016-11-02 09:27:19 -0400
+Processing by GamesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "board", "outcome", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["board", "---------"], ["outcome", 2], ["created_at", 2016-11-02 13:27:19 UTC], ["updated_at", 2016-11-02 13:27:19 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/45
+Completed 302 Found in 8ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/games/45" for ::1 at 2016-11-02 09:27:19 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 90ms (Views: 86.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 09:27:32 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 87ms (Views: 85.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games/new" for ::1 at 2016-11-02 09:27:33 -0400
+Processing by GamesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "board", "outcome", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["board", "---------"], ["outcome", 2], ["created_at", 2016-11-02 13:27:33 UTC], ["updated_at", 2016-11-02 13:27:33 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/46
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/games/46" for ::1 at 2016-11-02 09:27:33 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 82ms (Views: 78.0ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:27:41 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"4"}, "id"=>"update"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "----X----"], ["updated_at", 2016-11-02 13:27:41 UTC], ["id", 46]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "----X---O"], ["updated_at", 2016-11-02 13:27:41 UTC], ["id", 46]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82f6a01718,'0.4216E-2',9(36)>], ["updated_at", 2016-11-02 13:27:41 UTC], ["id", 46]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 5.2ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:27:41 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"1"}, "id"=>"update"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "-X--X---O"], ["updated_at", 2016-11-02 13:27:41 UTC], ["id", 46]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "-X--X--OO"], ["updated_at", 2016-11-02 13:27:41 UTC], ["id", 46]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82f3f1bf80,'0.8312E-2',9(36)>], ["updated_at", 2016-11-02 13:27:41 UTC], ["id", 46]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 5.2ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:27:42 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"3"}, "id"=>"update"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "-X-XX--OO"], ["updated_at", 2016-11-02 13:27:42 UTC], ["id", 46]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "-X-XXO-OO"], ["updated_at", 2016-11-02 13:27:42 UTC], ["id", 46]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82f3d228a0,'0.10145E-1',9(36)>], ["updated_at", 2016-11-02 13:27:42 UTC], ["id", 46]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 3.5ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:27:43 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"2"}, "id"=>"update"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "-XXXXO-OO"], ["updated_at", 2016-11-02 13:27:43 UTC], ["id", 46]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "-XXXXOOOO"], ["updated_at", 2016-11-02 13:27:43 UTC], ["id", 46]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82f384f990,'0.12097E-1',9(36)>], ["updated_at", 2016-11-02 13:27:43 UTC], ["id", 46]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "outcome" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["outcome", -1], ["updated_at", 2016-11-02 13:27:43 UTC], ["id", 46]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 09:28:19 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 224ms (Views: 213.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/sessions/new" for ::1 at 2016-11-02 09:28:23 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered _errors.html.erb (0.3ms)
+  Rendered sessions/_form.html.erb (3.0ms)
+  Rendered sessions/new.html.erb within layouts/application (5.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 93ms (Views: 90.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sessions" for ::1 at 2016-11-02 09:28:28 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HWUaGQTcfYWppJf2nchfwBSXUp94o7suYUTSXcPPq/oY4/i+yuPUaVdRq6ZOAI81fi8rDbQsYus33Mjc7Jn68A==", "user"=>{"username"=>"Well", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Well"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 80ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 09:28:28 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 75ms (Views: 73.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games/new" for ::1 at 2016-11-02 09:28:29 -0400
+Processing by GamesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "board", "outcome", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["board", "---------"], ["outcome", 2], ["created_at", 2016-11-02 13:28:29 UTC], ["updated_at", 2016-11-02 13:28:29 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/47
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/games/47" for ::1 at 2016-11-02 09:28:29 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 166ms (Views: 132.9ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:28:31 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"4"}, "id"=>"update"}
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "----X----"], ["updated_at", 2016-11-02 13:28:31 UTC], ["id", 47]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "----X---O"], ["updated_at", 2016-11-02 13:28:31 UTC], ["id", 47]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82fe0c0d68,'0.3236E-2',9(36)>], ["updated_at", 2016-11-02 13:28:31 UTC], ["id", 47]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 4.7ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:28:34 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"6"}, "id"=>"update"}
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "----X-X-O"], ["updated_at", 2016-11-02 13:28:34 UTC], ["id", 47]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "--O-X-X-O"], ["updated_at", 2016-11-02 13:28:34 UTC], ["id", 47]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82fa6197f0,'0.535E-2',9(36)>], ["updated_at", 2016-11-02 13:28:34 UTC], ["id", 47]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 09:28:47 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 84ms (Views: 81.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2" for ::1 at 2016-11-02 09:28:49 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "games" WHERE "games"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 99ms (Views: 94.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/games/47" for ::1 at 2016-11-02 09:28:54 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 94ms (Views: 89.9ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:28:56 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"5"}, "id"=>"update"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "--O-XXX-O"], ["updated_at", 2016-11-02 13:28:56 UTC], ["id", 47]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "--OOXXX-O"], ["updated_at", 2016-11-02 13:28:56 UTC], ["id", 47]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82f5a01d90,'0.9247E-2',9(36)>], ["updated_at", 2016-11-02 13:28:56 UTC], ["id", 47]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 5.3ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:28:58 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"0"}, "id"=>"update"}
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "X-OOXXX-O"], ["updated_at", 2016-11-02 13:28:58 UTC], ["id", 47]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "X-OOXXXOO"], ["updated_at", 2016-11-02 13:28:58 UTC], ["id", 47]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82f42c9ab0,'0.13343E-1',9(36)>], ["updated_at", 2016-11-02 13:28:58 UTC], ["id", 47]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 5.5ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:28:59 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"1"}, "id"=>"update"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "XXOOXXXOO"], ["updated_at", 2016-11-02 13:28:59 UTC], ["id", 47]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:29:33 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"2"}, "id"=>"update"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "XXXOXXXOO"], ["updated_at", 2016-11-02 13:29:33 UTC], ["id", 47]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "outcome" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["outcome", 1], ["updated_at", 2016-11-02 13:29:33 UTC], ["id", 47]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/2" for ::1 at 2016-11-02 09:45:54 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "games" WHERE "games"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (24.8ms)
+Started GET "/users/2" for ::1 at 2016-11-02 09:45:56 -0400
+Completed 200 OK in 3067ms (Views: 3037.8ms | ActiveRecord: 1.2ms)
+
+
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "games" WHERE "games"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (32.7ms)
+Completed 200 OK in 145ms (Views: 131.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/games/23" for ::1 at 2016-11-02 09:49:53 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 91ms (Views: 87.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/games/38" for ::1 at 2016-11-02 09:50:10 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"38"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 104ms (Views: 101.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/games/38" for ::1 at 2016-11-02 09:50:26 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"38"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 88ms (Views: 84.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 09:50:31 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 99ms (Views: 96.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2" for ::1 at 2016-11-02 09:51:02 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "games" WHERE "games"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 119ms (Views: 115.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/games/29" for ::1 at 2016-11-02 09:52:37 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 64ms (Views: 61.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/games/42" for ::1 at 2016-11-02 09:52:41 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 71ms (Views: 68.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/games/29" for ::1 at 2016-11-02 09:52:50 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 79ms (Views: 76.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 09:54:43 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 77ms (Views: 74.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/games/new" for ::1 at 2016-11-02 09:54:51 -0400
+Processing by GamesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "board", "outcome", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["board", "---------"], ["outcome", 2], ["created_at", 2016-11-02 13:54:51 UTC], ["updated_at", 2016-11-02 13:54:51 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/48
+Completed 302 Found in 8ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/games/48" for ::1 at 2016-11-02 09:54:51 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 85ms (Views: 81.3ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:54:53 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"4"}, "id"=>"update"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "----X----"], ["updated_at", 2016-11-02 13:54:53 UTC], ["id", 48]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "----X--O-"], ["updated_at", 2016-11-02 13:54:53 UTC], ["id", 48]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82fd100478,'0.1713E-2',9(36)>], ["updated_at", 2016-11-02 13:54:53 UTC], ["id", 48]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 2.9ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:54:54 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"1"}, "id"=>"update"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "-X--X--O-"], ["updated_at", 2016-11-02 13:54:54 UTC], ["id", 48]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "-X--X-OO-"], ["updated_at", 2016-11-02 13:54:54 UTC], ["id", 48]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82fca92280,'0.6058E-2',9(36)>], ["updated_at", 2016-11-02 13:54:54 UTC], ["id", 48]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 5.4ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:54:55 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"8"}, "id"=>"update"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "-X--X-OOX"], ["updated_at", 2016-11-02 13:54:55 UTC], ["id", 48]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "OX--X-OOX"], ["updated_at", 2016-11-02 13:54:55 UTC], ["id", 48]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82f45309e8,'0.7945E-2',9(36)>], ["updated_at", 2016-11-02 13:54:55 UTC], ["id", 48]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 3.0ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:54:57 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"2"}, "id"=>"update"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "OXX-X-OOX"], ["updated_at", 2016-11-02 13:54:57 UTC], ["id", 48]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "OXX-XOOOX"], ["updated_at", 2016-11-02 13:54:57 UTC], ["id", 48]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82fb60e098,'0.9861E-2',9(36)>], ["updated_at", 2016-11-02 13:54:57 UTC], ["id", 48]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 3.0ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:54:57 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"3"}, "id"=>"update"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "OXXXXOOOX"], ["updated_at", 2016-11-02 13:54:57 UTC], ["id", 48]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:54:58 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"5"}, "id"=>"update"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "OXXXXXOOX"], ["updated_at", 2016-11-02 13:54:58 UTC], ["id", 48]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "outcome" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["outcome", 1], ["updated_at", 2016-11-02 13:54:58 UTC], ["id", 48]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 09:55:07 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 77ms (Views: 75.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games/new" for ::1 at 2016-11-02 09:55:09 -0400
+Processing by GamesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "board", "outcome", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["board", "---------"], ["outcome", 2], ["created_at", 2016-11-02 13:55:09 UTC], ["updated_at", 2016-11-02 13:55:09 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/49
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/games/49" for ::1 at 2016-11-02 09:55:09 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 117ms (Views: 112.9ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:55:10 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"4"}, "id"=>"update"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "----X----"], ["updated_at", 2016-11-02 13:55:10 UTC], ["id", 49]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "----X-O--"], ["updated_at", 2016-11-02 13:55:10 UTC], ["id", 49]]
+  [1m[35m (16.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82f6c26a20,'0.19117E-1',9(36)>], ["updated_at", 2016-11-02 13:55:10 UTC], ["id", 49]]
+  [1m[35m (15.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 48ms (Views: 0.3ms | ActiveRecord: 34.9ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:55:11 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"6"}, "id"=>"update"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "----X-X--"], ["updated_at", 2016-11-02 13:55:11 UTC], ["id", 49]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "--O-X-X--"], ["updated_at", 2016-11-02 13:55:11 UTC], ["id", 49]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82f6a93078,'0.23314E-1',9(36)>], ["updated_at", 2016-11-02 13:55:11 UTC], ["id", 49]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 5.9ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:55:14 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"2"}, "id"=>"update"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "--X-X-X--"], ["updated_at", 2016-11-02 13:55:14 UTC], ["id", 49]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "outcome" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["outcome", 1], ["updated_at", 2016-11-02 13:55:14 UTC], ["id", 49]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2016-11-02 09:55:19 -0400
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 72ms (Views: 70.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games/new" for ::1 at 2016-11-02 09:55:21 -0400
+Processing by GamesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "board", "outcome", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["board", "---------"], ["outcome", 2], ["created_at", 2016-11-02 13:55:21 UTC], ["updated_at", 2016-11-02 13:55:21 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/games/50
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/games/50" for ::1 at 2016-11-02 09:55:21 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"50"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 94ms (Views: 90.4ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:55:25 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"4"}, "id"=>"update"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "----X----"], ["updated_at", 2016-11-02 13:55:25 UTC], ["id", 50]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "O---X----"], ["updated_at", 2016-11-02 13:55:25 UTC], ["id", 50]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82fce08ef0,'0.1919E-2',9(36)>], ["updated_at", 2016-11-02 13:55:25 UTC], ["id", 50]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 2.9ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:55:32 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"0"}, "id"=>"update"}
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "X---X----"], ["updated_at", 2016-11-02 13:55:32 UTC], ["id", 50]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "X---X---O"], ["updated_at", 2016-11-02 13:55:32 UTC], ["id", 50]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "time_played" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["time_played", #<BigDecimal:7f82fd970d38,'0.4147E-2',9(36)>], ["updated_at", 2016-11-02 13:55:32 UTC], ["id", 50]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 3.8ms)
+
+
+Started PATCH "/games/update" for ::1 at 2016-11-02 09:55:35 -0400
+Processing by GamesController#update as */*
+  Parameters: {"game"=>{"id"=>"8"}, "id"=>"update"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "games" SET "board" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["board", "X---X---X"], ["updated_at", 2016-11-02 13:55:35 UTC], ["id", 50]]
+  [1m[35m (47.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "games" SET "outcome" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["outcome", 1], ["updated_at", 2016-11-02 13:55:35 UTC], ["id", 50]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 58ms (Views: 0.5ms | ActiveRecord: 49.4ms)
+
+
