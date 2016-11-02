@@ -4,7 +4,15 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(id: params[:id])
+    if session[:user_id] == params[:id]
+      @user = User.find_by(id: params[:id])
+      render 'show'
+    elsif session[:user_id]
+      @user = User.find_by(id: session[:user_id])
+      render 'show'
+    else
+      redirect_to sessions_new_path
+    end
   end
 
   def new
@@ -23,7 +31,6 @@ class UsersController < ApplicationController
   end
 
   private
-
   def user_params
     params.require(:user).permit(:username, :password)
   end
