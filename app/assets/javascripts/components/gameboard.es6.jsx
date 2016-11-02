@@ -19,8 +19,16 @@ class GameBoard extends React.Component {
           $('#' + i.toString()).addClass('img-comp');
         }
       }
-      if(this.props.outcome != 2){
+      if(this.props.outcome != 2) {
         $('.gameBoard').addClass('finished')
+        $('.container').prepend("<div class='center'><a href='/games/new'>Play Again</a></div>")
+        if (this.props.outcome == -1) {
+          $('.container').prepend('<div class="center">You Lost!</div>')
+        } else if (this.props.outcome == 0){
+          $('.container').prepend('<div class="center message">You Tied!</div>')
+        } else {
+          $('.container').prepend('<div class="center message">You Won!</div>')
+        }
       }
     }
 
@@ -42,11 +50,11 @@ class GameBoard extends React.Component {
             $("#" + response).addClass("img-comp");
           } else if (response.winner === "user") {
               $('.gameBoard').addClass("finished");
-              console.log("User won")
+              $('.container').prepend('<div class="center message">You Won!</div>')
           } else if (response.winner === "comp"){
               $("#" + response.move).addClass("img-comp");
               $('.gameBoard').addClass("finished");
-              console.log("User lost")
+              $('.container').prepend('<div class="center message">You Lost!</div>')
           }
         })
     }
