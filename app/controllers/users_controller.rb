@@ -23,6 +23,9 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
+      if session[:game_id]
+        Game.find_by(id: session[:game_id]).update(user_id: user.id)
+      end
       redirect_to root_path
     else
       @errors = user.errors.full_messages
