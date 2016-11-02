@@ -13,10 +13,13 @@ class GamesController < ApplicationController
   end
 
   def show
+    game_owner = Game.find_by(id: params[:id]).user_id
+    redirect_to root_path if session[:user_id] == 1 || game_owner != session[:user_id]  
     game = Game.find_by(id: params[:id])
     session[:game_id] = game.id
     @board = game.board
     @outcome = game.outcome
+    @user_id = set_user.id
   end
 
   def update
@@ -39,8 +42,9 @@ class GamesController < ApplicationController
           else
             render json: newer_board.first.to_s
           end
-        else
-          render json: "false"
+        else # at this point there are no empty spaces so the game is over
+          game.update(outcome: 0)
+          render json: {winner: 'tie'}
         end
       end
   end

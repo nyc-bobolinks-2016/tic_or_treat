@@ -22,6 +22,7 @@ class GameBoard extends React.Component {
       if(this.props.outcome != 2) {
         $('.gameBoard').addClass('finished')
         $('.container').prepend("<div class='center'><a href='/games/new'>Play Again</a></div>")
+
         if (this.props.outcome == -1) {
           $('.container').prepend('<div class="center">You Lost!</div>')
         } else if (this.props.outcome == 0){
@@ -45,16 +46,36 @@ class GameBoard extends React.Component {
         data: {game: {id: boxId}}
       }).done( (response) => {
         console.log('ajax worked');
+        console.log(this.props.userId);
+        console.log(typeof this.props.userId);
           $target.addClass("img-user clicked");
-          if(response != 'false' && response.winner != "user" && response.winner != 'comp'){
+          if(response.winner != 'tie' && response.winner != "user" && response.winner != 'comp'){
             $("#" + response).addClass("img-comp");
           } else if (response.winner === "user") {
               $('.gameBoard').addClass("finished");
+              if( this.props.userId == 1){
+                $('.container').prepend("<div class='center'><a href='/users/new'>Sign up</a> or <a href='/sessions/new'>log in</a> to save this game</div>")
+              }
+              $('.container').prepend("<div class='center'><a href='/games/new'>Play Again</a></div>")
               $('.container').prepend('<div class="center message">You Won!</div>')
           } else if (response.winner === "comp"){
               $("#" + response.move).addClass("img-comp");
               $('.gameBoard').addClass("finished");
+              if( this.props.userId == 1){
+                $('.container').prepend("<div class='center'><a href='/users/new'>Sign up</a> or <a href='/sessions/new'>log in</a> to save this game</div>")
+              }
+              $('.container').prepend("<div class='center'><a href='/games/new'>Play Again</a></div>")
               $('.container').prepend('<div class="center message">You Lost!</div>')
+
+              console.log("User lost")
+          } else {
+              $('.gameBoard').addClass("finished");
+              if( this.props.userId == 1){
+                $('.container').prepend("<div class='center'><a href='/users/new'>Sign up</a> or <a href='/sessions/new'>log in</a> to save this game</div>")
+              }
+              $('.container').prepend("<div class='center'><a href='/games/new'>Play Again</a></div>")
+              $('.container').prepend('<div class="center message">You Tied!</div>')
+              console.log("Game tied")
           }
         })
     }
