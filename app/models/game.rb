@@ -45,11 +45,7 @@ class Game < ApplicationRecord
             return [i, board_change]
           end
         end
-      end
-    end
-
-    pos.each do |row|
-      if row.select {|i| board_change[i] == 'X'}.length == 2
+      elsif row.select {|i| board_change[i] == 'X'}.length == 2
         row.each do |i|
           if board_change[i] == "-"
             board_change[i] = 'O'
@@ -58,7 +54,7 @@ class Game < ApplicationRecord
         end
       end
     end
-
+    
     idx = empties.shuffle.first
     self.board[idx] = "O"
     [idx, board_change]
