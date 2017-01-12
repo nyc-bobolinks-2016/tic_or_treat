@@ -27,16 +27,7 @@
               <li><a href="/users/new">sign up</a></li>
           <% end %>
         </ul>
-        <ul id="mobile-demo" class="side-nav">
-          <% if current_user && current_user.id != 1 %>
-            <li><a href="/users/<%= current_user.id %>"><%= current_user.username %></a></li>
-            <li><a href="/sessions/delete">logout</a></li>
-
-          <% else %>
-              <li><a href="/sessions/new">sign in</a></li>
-              <li><a href="/users/new">sign up</a></li>
-          <% end %>
-        </ul>
+        <%= render partial: "layouts/sideNav" %>
       </div>
     </nav>
     <div class='container'>
