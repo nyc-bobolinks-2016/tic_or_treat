@@ -17,3 +17,9 @@
 //= require react_ujs
 //= require components
 //= require_tree .
+
+
+$(document).ready(function(){
+  event.preventDefault()
+  $(".button-collapse").sideNav();
+});

@@ -16,8 +16,7 @@
 }
 
 .container {
-  max-width: 960px;
-  min-width: 450px;
+  width: 100%;
   margin: auto;
   margin-top: 3%;
 }
@@ -25,6 +24,7 @@
 .nav-wrapper {
   background-color: #B378D3;
 }
+
 .purpleButton {
   width: 200px;
   height: 50px;
@@ -33,7 +33,8 @@
   background-color: #B378D3;
 }
 #description {
-  text-indent: 50px;
+  width: 75%;
+  margin: auto;
   text-align: left;
   font-size: 16px;
 }
@@ -79,4 +80,18 @@ div .board-col {
  .row .input-field input:focus {
    border-bottom: 1px solid gold !important;
    box-shadow: 0 1px 0 0 #ffa500 !important
+ }
+
+ @media screen and (max-width: 765px) {
+
+   #description {
+     font-size: 30px;
+   }
+
+   .purpleButton {
+     width: 200px;
+     height: 70px;
+     font-size: 30px;
+     line-height: 70px;
+   }
  }
